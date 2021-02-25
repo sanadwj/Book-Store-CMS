@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Book from '../components/Book';
 
 const BooksList = () => {
-  <div>BooksList Component</div>;
+
 };
 
 export default BooksList;
