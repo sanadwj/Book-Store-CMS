@@ -1,7 +1,23 @@
 const CREATE_BOOK = 'CREATE_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
-const booksReducer = (state, action) => {
+const initialState = {
+  books: [
+    {
+      id: 1,
+      title: 'See, Touch, Feel',
+      category: 'Kids',
+
+    },
+    {
+      id: 2,
+      title: 'The Sum of Us',
+      category: 'History',
+    },
+  ],
+};
+
+const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return [...state, action.book];

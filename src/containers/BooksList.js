@@ -8,13 +8,6 @@ const mapStateToProps = state => {
   return { books };
 };
 
-const collections = books => {
-  const collection = [];
-  Object.keys(books).forEach(key => {
-    collection.unshift({ id: key, ...books[key] });
-  });
-};
-
 const Component = ({ books }) => (
   <table>
     <thead>
@@ -25,14 +18,13 @@ const Component = ({ books }) => (
       </tr>
     </thead>
     <tbody>
-      {collections(books).map(book => <Book key={book.id} />)}
+      {books.map(book => <Book key={book.id} book={book} />)}
     </tbody>
   </table>
 );
 
 Component.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  books: PropTypes.object.isRequired,
+  books: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 const BooksList = connect(
