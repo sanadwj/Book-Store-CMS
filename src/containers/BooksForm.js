@@ -1,25 +1,49 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createBook } from '../actions';
 
 const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+
 const BooksForm = () => {
-  const handleClick = e => {
-    e.preventDefault();
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  console.log(title);
+  console.log(category);
+
+  const dispatch = useDispatch();
+
+  const handleInputChange = e => {
+    setTitle(e.target.value);
   };
+
+  const handleSelectChange = e => {
+    setCategory(e.target.value);
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(createBook({
+      id: Math.random(),
+      title,
+      category,
+    }));
+    setTitle('');
+    setCategory('');
+  };
+
   return (
-    <div>
-      <input onChange={handleChange} value={state.value} />
-      <select>
+    <form onSubmit={handleSubmit}>
+      <input onChange={handleInputChange} value={title.value} />
+      <select onChange={handleSelectChange} value={category.value}>
         {categories.map(category => (
           <option key={category}>
-            {' '}
             {category}
           </option>
         ))}
       </select>
-      <button type="button" value="Submit" onClick={handleClick}>
+      <button type="submit">
         Submit
       </button>
-    </div>
+    </form>
   );
 };
 

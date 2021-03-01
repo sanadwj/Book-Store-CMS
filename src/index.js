@@ -6,8 +6,24 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import rootReducer from './reducers';
 
-const store = createStore(rootReducer);
+const initialState = {
+  books: [
+    {
+      id: 1,
+      title: 'See, Touch, Feel',
+      category: 'Kids',
 
+    },
+    {
+      id: 2,
+      title: 'The Sum of Us',
+      category: 'History',
+    },
+  ],
+};
+
+const store = createStore(rootReducer, initialState);
+store.getState();
 ReactDOM.render(
   <Provider store={store}>
     <App />
