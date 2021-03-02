@@ -7,8 +7,6 @@ const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learnin
 const BooksForm = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
-  console.log(title);
-  console.log(category);
 
   const dispatch = useDispatch();
 

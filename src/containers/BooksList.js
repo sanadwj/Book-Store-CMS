@@ -9,12 +9,9 @@ const BooksList = () => {
 
   const handleClick = e => {
     const id = parseFloat(e.target.value);
-    console.log(id);
-    const book = books.findIndex(book => book.id === id);
-    console.log(book);
     dispatch(removeBook(id));
   };
-  console.log(books);
+
   return (
     <table>
       <thead>
