@@ -22,7 +22,7 @@ const BooksForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(createBook({
-      id: Math.random(),
+      id: Math.floor(Math.random() * 100),
       title,
       category,
     }));
