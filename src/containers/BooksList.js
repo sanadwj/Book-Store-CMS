@@ -8,9 +8,11 @@ const BooksList = () => {
   const dispatch = useDispatch();
 
   const handleClick = e => {
-    e.preventDefault();
-    const book = books.map(book => book.id);
-    dispatch(removeBook(book));
+    const id = parseFloat(e.target.value);
+    console.log(id);
+    const book = books.findIndex(book => book.id === id);
+    console.log(book);
+    dispatch(removeBook(id));
   };
   console.log(books);
   return (
