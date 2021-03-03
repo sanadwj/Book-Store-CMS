@@ -11,7 +11,6 @@ const BooksList = () => {
     const id = parseFloat(e.target.value);
     dispatch(removeBook(id));
   };
-
   return (
     <table>
       <thead>

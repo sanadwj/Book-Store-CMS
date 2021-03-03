@@ -24,14 +24,15 @@ const BooksForm = () => {
       title,
       category,
     }));
-    setTitle('');
-    setCategory('');
+    setTitle({ value: '' });
+    setCategory({ value: '' });
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input onChange={handleInputChange} value={title.value} />
-      <select onChange={handleSelectChange} value={category.value}>
+      <select required onChange={handleSelectChange} value={category.value}>
+        <option value="">Category</option>
         {categories.map(category => (
           <option key={category}>
             {category}
