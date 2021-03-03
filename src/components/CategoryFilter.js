@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const CategoryFilter = ({ handleFilterChange, categories }) => (
   <select onChange={handleFilterChange}>
-    <option value="">Category</option>
+    <option value="all">All</option>
     {categories.map(category => (
       <option key={category}>
         {category}
@@ -14,7 +14,7 @@ const CategoryFilter = ({ handleFilterChange, categories }) => (
 
 CategoryFilter.propTypes = {
   handleFilterChange: PropTypes.func,
-  categories: PropTypes.string,
+  categories: PropTypes.arrayOf(PropTypes.string),
 };
 
 CategoryFilter.defaultProps = {
