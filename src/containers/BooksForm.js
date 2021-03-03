@@ -30,7 +30,7 @@ const BooksForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input onChange={handleInputChange} value={title.value} />
+      <input required onChange={handleInputChange} value={title.value} />
       <select required onChange={handleSelectChange} value={category.value}>
         <option value="">Category</option>
         {categories.map(category => (
