@@ -9,4 +9,4 @@ const filterReducer = (state = 'all', action) => {
   }
 };
 
-export default filterReducer();
+export default filterReducer;
