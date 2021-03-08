@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { createBook } from '../actions';
+import { createBook } from '../../actions';
 
 const BooksForm = ({ categories }) => {
   const [title, setTitle] = useState('');

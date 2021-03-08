@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import Book from '../components/Book';
-import { changeFilter, removeBook } from '../actions';
-import CategoryFilter from '../components/CategoryFilter';
+import Book from '../../components/Book/Book';
+import { changeFilter, removeBook } from '../../actions';
+import CategoryFilter from '../../components/CategoryFilter/CategoryFilter';
 
 const BooksList = ({ categories }) => {
   const books = useSelector(state => state.books);
