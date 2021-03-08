@@ -14,6 +14,11 @@ const initialState = {
       title: 'The Sum of Us',
       category: 'History',
     },
+    {
+      id: 3,
+      title: 'The Cat in the Hat',
+      category: 'Kids',
+    },
   ],
 };
 

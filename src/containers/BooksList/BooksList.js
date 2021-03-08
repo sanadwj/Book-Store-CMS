@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import Book from '../components/Book';
-import { changeFilter, removeBook } from '../actions';
-import CategoryFilter from '../components/CategoryFilter';
+import Book from '../../components/Book/Book';
+import { changeFilter, removeBook } from '../../actions';
+import CategoryFilter from '../../components/CategoryFilter/CategoryFilter';
 
 const BooksList = ({ categories }) => {
   const books = useSelector(state => state.books);
@@ -29,13 +29,6 @@ const BooksList = ({ categories }) => {
     <>
       <CategoryFilter categories={categories} handleFilterChange={handleFilterChange} />
       <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Category</th>
-            <th>Title</th>
-          </tr>
-        </thead>
         <tbody>
           {booksFilter().map(book => <Book key={book.id} book={book} remove={handleClick} />)}
         </tbody>
